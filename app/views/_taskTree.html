@@ -1,0 +1,35 @@
+<ul class="nav nav-list task-tree">
+
+  <li ng-repeat="task in root.children" 
+      ng-controller="TaskCtrl"  
+      ng-class="{active:task.isSelected}"
+      >
+
+    <a href="" ng-clickz="taskItemClick(task)">
+
+      <div  ng-click="chevronClick(task)"
+            class="pull-left taskChevron" 
+            title="Expand or collapse subtasks">
+          <i  ng-class="{'icon-chevron-down':task.isExpanded, 'icon-chevron-right':!task.isExpanded, 'icon-white':task.isSelected}" 
+              ng-show="task.hasSubtasks"></i>
+      </div>
+
+      <label  class="checkbox pull-left">
+        <input type="checkbox">
+      </label>
+
+      <span class="pull-left taskName" 
+            onclick="return false" 
+            title="">{{task.title}}</span>
+    </a>
+
+    <div class="border-bottom"></div>
+
+    <div ng-show="task.isExpanded">
+      <!-- Recursion -->
+      <tree root="task"></tree>
+    </div>
+
+  </li>
+</ul>
+

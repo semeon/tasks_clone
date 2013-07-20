@@ -1,0 +1,14 @@
+<div class="row-fluid">
+  <div class="span12 wells well-small">
+    <div class="btn-group pull-right">
+      <a class="btn btn-mini btn" href="#"><i class="icon-plus zicon-white"></i> New Project</a>
+    </div>    
+    <ul class="nav nav-pills nav-stacked" ng-controller="ProjCtrl">
+      <li class="nav-header">Your projects</li>
+      <li ng-repeat="project in projects" 
+          ng-class="{active:project.isSelected}"
+          ><a href="" ng-click="projectClick(project)">{{project.title}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

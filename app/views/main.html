@@ -1,0 +1,32 @@
+<div id="mainRow" class="row-fluid">
+
+  <!-- PROJECT LIST -->
+  <div id="projectListPane" class="span3 border-right">
+      <div ng-include src="projListTemplate"></div>
+  </div>
+
+  <!-- TASK PANE -->
+  <div id="taskListPane" class="span7">
+
+    <!-- Controls --> 
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="btn-toolbar pull-right">
+          <div class="btn-group">
+            <a class="btn btn-mini" href="#">Collapse All</a>
+            <a class="btn btn-mini" href="#">Expand All</a>
+          </div>    
+        </div>
+      </div>
+    </div>
+
+    <!-- Task groups --> 
+    <div class="row-fluid">
+      <div id="taskPaneRoot" class="span12">
+      <div ng-include src="taskGroupTemplate"></div>
+          
+      </div>
+    </div>
+
+  </div>
+</div>
